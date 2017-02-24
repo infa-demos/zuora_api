@@ -1,4 +1,5 @@
-{
+
+					{
   "swagger" : "2.0",
   "info" : {
     "description" : null,
@@ -12,19 +13,25 @@
   "basePath" : "/rest",
   "schemes" : [ "https" ],
   "paths" : {
-    "/v1/creditmemos/2c92c0945a4b2f38015a604e7a2f0610" : {
+    "/v1/creditmemos/{:id}" : {
       "get" : {
-        "tags" : [ "Get CreditMemos" ],
+        "tags" : [ "getCrteditMemos" ],
         "summary" : null,
         "description" : null,
-        "operationId" : "Get CreditMemos",
+        "operationId" : "getCrteditMemos",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string"
+        }],
         "responses" : {
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/Get CreditMemos"
+              "$ref" : "#/definitions/getCrteditMemos"
             }
           }
         }
@@ -32,94 +39,29 @@
     }
   },
   "definitions" : {
-    "Get CreditMemos" : {
+    "getCrteditMemos##reasons" : {
       "properties" : {
-        "id" : {
+        "code" : {
+          "type" : "number"
+        },
+        "message" : {
           "type" : "string"
-        },
-        "number" : {
-          "type" : "string"
-        },
-        "accountId" : {
-          "type" : "string"
-        },
-        "currency" : {
-          "type" : "string"
-        },
-        "creditMemoDate" : {
-          "type" : "string"
-        },
-        "targetDate" : {
-          "type" : "string"
-        },
-        "postedById" : {
-          "type" : "string"
-        },
-        "postedOn" : {
-          "type" : "string"
-        },
-        "status" : {
-          "type" : "string"
-        },
-        "amount" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "taxAmount" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "totalTaxExemptAmount" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "unappliedAmount" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "refundAmount" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "appliedAmount" : {
-          "type" : "number",
-          "format" : "double"
-        },
-        "comment" : {
-          "type" : "string"
-        },
-        "referredInvoiceId" : {
-          "type" : "string"
-        },
-        "reasonCode" : {
-          "type" : "string"
-        },
-        "createdDate" : {
-          "type" : "string"
-        },
-        "createdById" : {
-          "type" : "string"
-        },
-        "updatedDate" : {
-          "type" : "string"
-        },
-        "updatedById" : {
-          "type" : "string"
-        },
-        "latestPDFFileId" : {
-          "type" : "string"
-        },
-        "transferredToAccounting" : {
-          "type" : "string"
-        },
-        "excludeFromAutoApplyRules" : {
-          "type" : "boolean"
-        },
-        "autoApplyUponPosting" : {
-          "type" : "boolean"
-        },
+        }
+      }
+    },
+    "getCrteditMemos" : {
+      "properties" : {
         "success" : {
           "type" : "boolean"
+        },
+        "processId" : {
+          "type" : "string"
+        },
+        "reasons" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/getCrteditMemos##reasons"
+          }
         }
       }
     }
