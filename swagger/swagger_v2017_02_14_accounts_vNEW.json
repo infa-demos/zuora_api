@@ -1,0 +1,335 @@
+Informatica Swagger Generator
+This is a utility to generate swagger [Open API Specification] for a hosted Service. If you have access to service implementation, we recommend exploring Swagger generation using other utilities.
+Endpoint Definition
+API Information
+Response
+Swagger Spec
+Deploy
+Copy to clipboard  Next
+			{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "apisandbox-api.zuora.com",
+  "basePath" : "/rest",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/v1/accounts/A00000068" : {
+      "get" : {
+        "tags" : [ "Accounts" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "Accounts",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Accounts"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Accounts##basicInfo" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        },
+        "accountNumber" : {
+          "type" : "string"
+        },
+        "notes" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "crmId" : {
+          "type" : "string"
+        },
+        "batch" : {
+          "type" : "string"
+        },
+        "invoiceTemplateId" : {
+          "type" : "string"
+        },
+        "communicationProfileId" : {
+          "type" : "string"
+        },
+        "InvoiceTemplateType__c" : {
+          "type" : "string"
+        },
+        "DeliveryTerm__c" : {
+          "type" : "string"
+        },
+        "CustomerClassification__c" : {
+          "type" : "string"
+        },
+        "TaxRegistration__c" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Accounts##billingAndPayment" : {
+      "properties" : {
+        "billCycleDay" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "paymentTerm" : {
+          "type" : "string"
+        },
+        "paymentGateway" : {
+          "type" : "string"
+        },
+        "invoiceDeliveryPrefsPrint" : {
+          "type" : "boolean"
+        },
+        "invoiceDeliveryPrefsEmail" : {
+          "type" : "boolean"
+        },
+        "additionalEmailAddresses" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "Accounts##metrics" : {
+      "properties" : {
+        "balance" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "totalInvoiceBalance" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "creditBalance" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "totalDebitMemoBalance" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "unappliedPaymentAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "unappliedCreditMemoAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "contractedMrr" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      }
+    },
+    "Accounts##billToContact" : {
+      "properties" : {
+        "address1" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "county" : {
+          "type" : "string"
+        },
+        "fax" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "homePhone" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "mobilePhone" : {
+          "type" : "string"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "otherPhone" : {
+          "type" : "string"
+        },
+        "otherPhoneType" : {
+          "type" : "string"
+        },
+        "personalEmail" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "taxRegion" : {
+          "type" : "string"
+        },
+        "workEmail" : {
+          "type" : "string"
+        },
+        "workPhone" : {
+          "type" : "string"
+        },
+        "zipCode" : {
+          "type" : "string"
+        },
+        "SFDCContactId__c" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Accounts##soldToContact" : {
+      "properties" : {
+        "address1" : {
+          "type" : "string"
+        },
+        "address2" : {
+          "type" : "string"
+        },
+        "city" : {
+          "type" : "string"
+        },
+        "country" : {
+          "type" : "string"
+        },
+        "county" : {
+          "type" : "string"
+        },
+        "fax" : {
+          "type" : "string"
+        },
+        "firstName" : {
+          "type" : "string"
+        },
+        "homePhone" : {
+          "type" : "string"
+        },
+        "lastName" : {
+          "type" : "string"
+        },
+        "mobilePhone" : {
+          "type" : "string"
+        },
+        "nickname" : {
+          "type" : "string"
+        },
+        "otherPhone" : {
+          "type" : "string"
+        },
+        "otherPhoneType" : {
+          "type" : "string"
+        },
+        "personalEmail" : {
+          "type" : "string"
+        },
+        "state" : {
+          "type" : "string"
+        },
+        "taxRegion" : {
+          "type" : "string"
+        },
+        "workEmail" : {
+          "type" : "string"
+        },
+        "workPhone" : {
+          "type" : "string"
+        },
+        "zipCode" : {
+          "type" : "string"
+        },
+        "SFDCContactId__c" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Accounts##taxInfo" : {
+      "properties" : {
+        "exemptStatus" : {
+          "type" : "string"
+        },
+        "exemptCertificateId" : {
+          "type" : "string"
+        },
+        "exemptCertificateType" : {
+          "type" : "string"
+        },
+        "exemptIssuingJurisdiction" : {
+          "type" : "string"
+        },
+        "exemptEffectiveDate" : {
+          "type" : "string"
+        },
+        "exemptExpirationDate" : {
+          "type" : "string"
+        },
+        "exemptDescription" : {
+          "type" : "string"
+        },
+        "companyCode" : {
+          "type" : "string"
+        },
+        "VATId" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Accounts" : {
+      "properties" : {
+        "basicInfo" : {
+          "$ref" : "#/definitions/Accounts##basicInfo"
+        },
+        "billingAndPayment" : {
+          "$ref" : "#/definitions/Accounts##billingAndPayment"
+        },
+        "metrics" : {
+          "$ref" : "#/definitions/Accounts##metrics"
+        },
+        "billToContact" : {
+          "$ref" : "#/definitions/Accounts##billToContact"
+        },
+        "soldToContact" : {
+          "$ref" : "#/definitions/Accounts##soldToContact"
+        },
+        "taxInfo" : {
+          "$ref" : "#/definitions/Accounts##taxInfo"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}
+		
+ 
