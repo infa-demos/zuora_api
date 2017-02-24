@@ -1,0 +1,28 @@
+swagger: '2.0'
+info:
+  version: 0.0.0
+  title: Simple API
+paths:
+  /:
+    get:
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/##GrandParent'
+definitions:
+  ##GrandParent:
+    type: object
+    properties:
+      Parent:
+        $ref: '#/definitions/##Parent'
+  ##Parent:
+    type: object
+    properties:
+      Child:
+        $ref: '#/definitions/##Child'
+  Child:
+    type: object
+    properties:
+      name:
+        type: string

@@ -1,0 +1,452 @@
+
+					{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "plus.dnb.com",
+  "basePath" : "/v1",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/match/cleanseMatch" : {
+      "get" : {
+        "tags" : [ "cleanseMatch" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "cleanseMatch",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "countryISOAlpha2Code",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "isCleanseAndStandardizeInformationRequired",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "addressLocality",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "addressRegion",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "streetAddressLine1",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "Authorization",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "origin",
+          "in" : "header",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/##cleanseMatch"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "##cleanseMatch##transactionDetail" : {
+      "properties" : {
+        "transactionID" : {
+          "type" : "string"
+        },
+        "transactionTimestamp" : {
+          "type" : "string"
+        },
+        "inLanguage" : {
+          "type" : "string"
+        },
+        "serviceVersion" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##streetAddressLine" : {
+      "properties" : {
+        "line1" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##address" : {
+      "properties" : {
+        "countryISOAlpha2Code" : {
+          "type" : "string"
+        },
+        "addressLocality" : {
+          "type" : "string"
+        },
+        "addressRegion" : {
+          "type" : "string"
+        },
+        "streetAddressLine" : {
+          "$ref" : "#/definitions/##cleanseMatch##streetAddressLine"
+        }
+      }
+    },
+    "##cleanseMatch##inquiryDetail" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "address" : {
+          "$ref" : "#/definitions/##cleanseMatch##address"
+        },
+        "isCleanseAndStandardizeInformationRequired" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "##cleanseMatch##operatingStatus" : {
+      "properties" : {
+        "description" : {
+          "type" : "string"
+        },
+        "dnbCode" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "##cleanseMatch##dunsControlStatus" : {
+      "properties" : {
+        "operatingStatus" : {
+          "$ref" : "#/definitions/##cleanseMatch##operatingStatus"
+        },
+        "isMailUndeliverable" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "##cleanseMatch##telephone" : {
+      "properties" : {
+        "telephoneNumber" : {
+          "type" : "string"
+        },
+        "isUnreachable" : {
+          "type" : "boolean"
+        }
+      }
+    },
+    "##cleanseMatch##addressCountry" : {
+      "properties" : {
+        "isoAlpha2Code" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##addressLocality" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##addressRegion" : {
+      "properties" : {
+        "abbreviatedName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##streetAddress" : {
+      "properties" : {
+        "line1" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##primaryAddress" : {
+      "properties" : {
+        "addressCountry" : {
+          "$ref" : "#/definitions/##cleanseMatch##addressCountry"
+        },
+        "addressLocality" : {
+          "$ref" : "#/definitions/##cleanseMatch1##addressLocality"
+        },
+        "addressRegion" : {
+          "$ref" : "#/definitions/##cleanseMatch1##addressRegion"
+        },
+        "postalCode" : {
+          "type" : "string"
+        },
+        "postalCodeExtension" : {
+          "type" : "string"
+        },
+        "streetAddress" : {
+          "$ref" : "#/definitions/##cleanseMatch##streetAddress"
+        }
+      }
+    },
+    "##cleanseMatch##mostSeniorPrincipals" : {
+      "properties" : {
+        "fullName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##familytreeRolesPlayed" : {
+      "properties" : {
+        "description" : {
+          "type" : "string"
+        },
+        "dnbCode" : {
+          "type" : "number",
+          "format" : "int32"
+        }
+      }
+    },
+    "##cleanseMatch##corporateLinkage" : {
+      "properties" : {
+        "familytreeRolesPlayed" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/##cleanseMatch##familytreeRolesPlayed"
+          }
+        }
+      }
+    },
+    "##cleanseMatch##organization" : {
+      "properties" : {
+        "duns" : {
+          "type" : "string"
+        },
+        "dunsControlStatus" : {
+          "$ref" : "#/definitions/##cleanseMatch##dunsControlStatus"
+        },
+        "primaryName" : {
+          "type" : "string"
+        },
+        "telephone" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/##cleanseMatch##telephone"
+          }
+        },
+        "primaryAddress" : {
+          "$ref" : "#/definitions/##cleanseMatch##primaryAddress"
+        },
+        "mostSeniorPrincipals" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/##cleanseMatch##mostSeniorPrincipals"
+          }
+        },
+        "isStandalone" : {
+          "type" : "boolean"
+        },
+        "corporateLinkage" : {
+          "$ref" : "#/definitions/##cleanseMatch##corporateLinkage"
+        }
+      }
+    },
+    "##cleanseMatch##matchGradeComponents" : {
+      "properties" : {
+        "componentType" : {
+          "type" : "string"
+        },
+        "componentRating" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##matchDataProfileComponents" : {
+      "properties" : {
+        "componentType" : {
+          "type" : "string"
+        },
+        "componentValue" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##matchQualityInformation" : {
+      "properties" : {
+        "confidenceCode" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "matchGrade" : {
+          "type" : "string"
+        },
+        "matchGradeComponentsCount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "matchGradeComponents" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/##cleanseMatch##matchGradeComponents"
+          }
+        },
+        "matchDataProfile" : {
+          "type" : "string"
+        },
+        "matchDataProfileComponentsCount" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "matchDataProfileComponents" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/##cleanseMatch##matchDataProfileComponents"
+          }
+        }
+      }
+    },
+    "##cleanseMatch##matchCandidates" : {
+      "properties" : {
+        "displaySequence" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "organization" : {
+          "$ref" : "#/definitions/##cleanseMatch##organization"
+        },
+        "matchQualityInformation" : {
+          "$ref" : "#/definitions/##cleanseMatch##matchQualityInformation"
+        }
+      }
+    },
+    "##cleanseMatch1##addressCountry" : {
+      "properties" : {
+        "isoAlpha2Code" : {
+          "type" : "string"
+        },
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch1##addressLocality" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch1##addressRegion" : {
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "abbreviatedName" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch1##streetAddress" : {
+      "properties" : {
+        "line1" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##standardizedAddress" : {
+      "properties" : {
+        "addressCountry" : {
+          "$ref" : "#/definitions/##cleanseMatch1##addressCountry"
+        },
+        "addressLocality" : {
+          "$ref" : "#/definitions/##cleanseMatch1##addressLocality"
+        },
+        "addressRegion" : {
+          "$ref" : "#/definitions/##cleanseMatch1##addressRegion"
+        },
+        "streetAddress" : {
+          "$ref" : "#/definitions/##cleanseMatch1##streetAddress"
+        },
+        "deliveryPointValidationStatus" : {
+          "type" : "string"
+        },
+        "deliveryPointValidationCMRAValue" : {
+          "type" : "string"
+        },
+        "isInexactAddress" : {
+          "type" : "boolean"
+        },
+        "addressType" : {
+          "type" : "string"
+        }
+      }
+    },
+    "##cleanseMatch##cleanseAndStandardizeInformation" : {
+      "properties" : {
+        "standardizedName" : {
+          "type" : "string"
+        },
+        "standardizedAddress" : {
+          "$ref" : "#/definitions/##cleanseMatch##standardizedAddress"
+        }
+      }
+    },
+    "##cleanseMatch" : {
+      "properties" : {
+        "transactionDetail" : {
+          "$ref" : "#/definitions/##cleanseMatch##transactionDetail"
+        },
+        "inquiryDetail" : {
+          "$ref" : "#/definitions/##cleanseMatch##inquiryDetail"
+        },
+        "candidatesMatchedQuantity" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "matchDataCriteria" : {
+          "type" : "string"
+        },
+        "matchCandidates" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/##cleanseMatch##matchCandidates"
+          }
+        },
+        "cleanseAndStandardizeInformation" : {
+          "$ref" : "#/definitions/##cleanseMatch##cleanseAndStandardizeInformation"
+        }
+      }
+    }
+  }
+}
+		
+	
