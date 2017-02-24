@@ -1,5 +1,4 @@
-
-					{
+{
   "swagger" : "2.0",
   "info" : {
     "description" : null,
@@ -13,25 +12,26 @@
   "basePath" : "/rest",
   "schemes" : [ "https" ],
   "paths" : {
-    "/v1/creditmemos/{:id}" : {
+    "/v1/creditmemos/{2c92c0945a4b2f38015a604e7a2f0610}" : {
       "get" : {
-        "tags" : [ "getCrteditMemos" ],
+        "tags" : [ "getCreditMemos" ],
         "summary" : null,
         "description" : null,
-        "operationId" : "getCrteditMemos",
+        "operationId" : "getCreditMemos",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
         "parameters" : [ {
-          "name" : "id",
+          "name" : "2c92c0945a4b2f38015a604e7a2f0610",
           "in" : "path",
-          "required" : true,
+          "description" : null,
+          "required" : false,
           "type" : "string"
-        }],
+        } ],
         "responses" : {
           "200" : {
             "description" : "successful operation",
             "schema" : {
-              "$ref" : "#/definitions/getCrteditMemos"
+              "$ref" : "#/definitions/getCreditMemos"
             }
           }
         }
@@ -39,29 +39,94 @@
     }
   },
   "definitions" : {
-    "getCrteditMemos##reasons" : {
+    "getCreditMemos" : {
       "properties" : {
-        "code" : {
-          "type" : "number"
-        },
-        "message" : {
+        "id" : {
           "type" : "string"
-        }
-      }
-    },
-    "getCrteditMemos" : {
-      "properties" : {
-        "success" : {
+        },
+        "number" : {
+          "type" : "string"
+        },
+        "accountId" : {
+          "type" : "string"
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "creditMemoDate" : {
+          "type" : "string"
+        },
+        "targetDate" : {
+          "type" : "string"
+        },
+        "postedById" : {
+          "type" : "string"
+        },
+        "postedOn" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "taxAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "totalTaxExemptAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "unappliedAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "refundAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "appliedAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "comment" : {
+          "type" : "string"
+        },
+        "referredInvoiceId" : {
+          "type" : "string"
+        },
+        "reasonCode" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        },
+        "createdById" : {
+          "type" : "string"
+        },
+        "updatedDate" : {
+          "type" : "string"
+        },
+        "updatedById" : {
+          "type" : "string"
+        },
+        "latestPDFFileId" : {
+          "type" : "string"
+        },
+        "transferredToAccounting" : {
+          "type" : "string"
+        },
+        "excludeFromAutoApplyRules" : {
           "type" : "boolean"
         },
-        "processId" : {
-          "type" : "string"
+        "autoApplyUponPosting" : {
+          "type" : "boolean"
         },
-        "reasons" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/getCrteditMemos##reasons"
-          }
+        "success" : {
+          "type" : "boolean"
         }
       }
     }
