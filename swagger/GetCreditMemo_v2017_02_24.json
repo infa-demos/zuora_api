@@ -20,7 +20,6 @@
         "operationId" : "Get CreditMemos",
         "produces" : [ "application/json" ],
         "consumes" : [ "application/json" ],
-        "parameters" : [ ],
         "responses" : {
           "200" : {
             "description" : "successful operation",
