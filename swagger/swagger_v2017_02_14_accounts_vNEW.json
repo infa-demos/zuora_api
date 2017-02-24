@@ -1,12 +1,4 @@
-Informatica Swagger Generator
-This is a utility to generate swagger [Open API Specification] for a hosted Service. If you have access to service implementation, we recommend exploring Swagger generation using other utilities.
-Endpoint Definition
-API Information
-Response
-Swagger Spec
-Deploy
-Copy to clipboard  Next
-			{
+{
   "swagger" : "2.0",
   "info" : {
     "description" : null,
