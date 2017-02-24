@@ -1,0 +1,128 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "apisandbox-api.zuora.com",
+  "basePath" : "/rest",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/v1/creditmemos/2c92c0945a4b2f38015a604e7a2f0610" : {
+      "get" : {
+        "tags" : [ "Get CreditMemos" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "Get CreditMemos",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/Get CreditMemos"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Get CreditMemos" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        },
+        "number" : {
+          "type" : "string"
+        },
+        "accountId" : {
+          "type" : "string"
+        },
+        "currency" : {
+          "type" : "string"
+        },
+        "creditMemoDate" : {
+          "type" : "string"
+        },
+        "targetDate" : {
+          "type" : "string"
+        },
+        "postedById" : {
+          "type" : "string"
+        },
+        "postedOn" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "amount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "taxAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "totalTaxExemptAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "unappliedAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "refundAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "appliedAmount" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "comment" : {
+          "type" : "string"
+        },
+        "referredInvoiceId" : {
+          "type" : "string"
+        },
+        "reasonCode" : {
+          "type" : "string"
+        },
+        "createdDate" : {
+          "type" : "string"
+        },
+        "createdById" : {
+          "type" : "string"
+        },
+        "updatedDate" : {
+          "type" : "string"
+        },
+        "updatedById" : {
+          "type" : "string"
+        },
+        "latestPDFFileId" : {
+          "type" : "string"
+        },
+        "transferredToAccounting" : {
+          "type" : "string"
+        },
+        "excludeFromAutoApplyRules" : {
+          "type" : "boolean"
+        },
+        "autoApplyUponPosting" : {
+          "type" : "boolean"
+        },
+        "success" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}
